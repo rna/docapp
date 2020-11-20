@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import {
   currentTime, today, tomorrow, thirdDay,
 } from '../helpers/dateHelper';
+import timeSlots from '../helpers/timeSlotHelper';
 
 const DoctorCardComponent = ({ doctor, schedule }) => {
-  const todaySchedules = schedule.filter(d => today >= new Date(d) && new Date(d) > currentTime).map(t => (t.split(' '))[1]);
-  const tomorrowSchedules = schedule.filter(d => tomorrow >= new Date(d) && new Date(d) > today).map(t => (t.split(' '))[1]);
-  const thirdDaySchedules = schedule.filter(d => thirdDay >= new Date(d) && new Date(d) > tomorrow).map(t => (t.split(' '))[1]);
+  const todaySchedules = timeSlots(schedule, today, currentTime);
+  const tomorrowSchedules = timeSlots(schedule, tomorrow, today);
+  const thirdDaySchedules = timeSlots(schedule, thirdDay, tomorrow);
   return (
     <>
       <tr>
