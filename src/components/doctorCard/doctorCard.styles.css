@@ -1,0 +1,14 @@
+.doctor-card {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+.doctor-image {
+  margin: 20px;
+}
+
+.doctor-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}

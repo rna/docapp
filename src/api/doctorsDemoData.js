@@ -1,0 +1,48 @@
+const doctors = [
+  {
+    id: 1,
+    name: 'Joseph Calen',
+    email: 'joseph@yahoo.com',
+    specialization: 'Orthopedist',
+    experience: 24,
+    fee: 150,
+    created_at: '2020-11-23T13:45:31.969Z',
+    updated_at: '2020-11-23T13:45:31.969Z',
+    image: 'https://images.unsplash.com/photo-1595956553439-aeb7ea92ec36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+  },
+  {
+    id: 2,
+    name: 'Matheew Carillo',
+    email: 'matheew@yahoo.com',
+    specialization: 'Dentist',
+    experience: 17,
+    fee: 100,
+    created_at: '2020-11-23T13:45:31.978Z',
+    updated_at: '2020-11-23T13:45:31.978Z',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+  },
+  {
+    id: 3,
+    name: 'Dana Mantilia',
+    email: 'dana@yahoo.com',
+    specialization: 'Dermatologist',
+    experience: 11,
+    fee: 100,
+    created_at: '2020-11-23T13:45:31.991Z',
+    updated_at: '2020-11-23T13:45:31.991Z',
+    image: 'https://images.unsplash.com/photo-1557182549-099ccb56dbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+  },
+  {
+    id: 4,
+    name: 'Mercia Williams',
+    email: 'mercia@yahoo.com',
+    specialization: 'Gynecologist',
+    experience: 12,
+    fee: 100,
+    created_at: '2020-11-23T13:45:31.999Z',
+    updated_at: '2020-11-23T13:45:31.999Z',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+  },
+];
+
+export default doctors;
