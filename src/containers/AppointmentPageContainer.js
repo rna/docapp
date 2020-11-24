@@ -48,7 +48,10 @@ const mapDispatchToProps = {
 };
 
 AppointmentPageContainer.propTypes = {
-  schedule: PropTypes.instanceOf(Array).isRequired,
+  schedule: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Array),
+  ]).isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
   getScheduleRequest: PropTypes.func.isRequired,

@@ -46,7 +46,10 @@ const mapDispatchToProps = {
 };
 
 PatientPageContainer.propTypes = {
-  doctors: PropTypes.instanceOf(Array).isRequired,
+  doctors: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Array),
+  ]).isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
   getDoctorsRequest: PropTypes.func.isRequired,
