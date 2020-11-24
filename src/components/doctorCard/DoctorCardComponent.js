@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './doctorCard.styles.css';
 
 const DoctorCardComponent = ({ doctor }) => (
@@ -24,13 +25,14 @@ const DoctorCardComponent = ({ doctor }) => (
       </p>
     </div>
     <div className="doctor-link">
-      <a href="/appointments">Book an Appointment</a>
+      <Link to={`/${doctor.id}/book-appointment`}>Book an Appointment</Link>
     </div>
   </div>
 );
 
 DoctorCardComponent.propTypes = {
   doctor: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     specialization: PropTypes.string.isRequired,
     experience: PropTypes.number.isRequired,
