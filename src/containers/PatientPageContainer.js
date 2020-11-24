@@ -16,7 +16,7 @@ const PatientPageContainer = ({
     customDoctorCard = <div>Loading..... </div>;
   }
   if (doctors) {
-    customDoctorCard = <DoctorCardComponent doctor={doctors[0]} />;
+    customDoctorCard = doctors.map(d => <DoctorCardComponent key={d.name} doctor={d} />);
   }
   if (error) {
     customDoctorCard = (
