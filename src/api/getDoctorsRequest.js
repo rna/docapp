@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as action from '../actions/index';
+import * as action from '../actions/doctorsActions';
 
 function getDoctorsRequest() {
   return dispatch => {

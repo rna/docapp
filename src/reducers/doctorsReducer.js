@@ -12,7 +12,7 @@ const doctorsData = (state = initialState, action) => {
       return { ...state, loading: false, doctors: action.payload };
     case 'FETCH_DOCTORS_FAILURE':
       return {
-        ...state, loading: false, error: action.payload, doctors: [],
+        ...state, loading: false, error: action.payload, doctors: '',
       };
     default:
       return state;

@@ -1,5 +1,10 @@
 export default function timeSlotHelper(arr, curr, prev) {
-  return arr
-    .filter(d => curr >= new Date(d) && new Date(d) > prev)
-    .map(t => t.split(' ')[1]);
+  const filtered = arr.filter(
+    d => curr >= new Date(d.time) && new Date(d.time) > prev,
+  );
+
+  if (filtered.length === 0) {
+    return '';
+  }
+  return filtered.map(t => t.time.split(' ')[1]);
 }

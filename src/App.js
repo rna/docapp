@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/"><PatientPageContainer /></Route>
-        <Route exact path="/:doctor_id/book-appointment"><AppointmentPageContainer /></Route>
+        <Route exact path="/:doctorId/book-appointment"><AppointmentPageContainer /></Route>
       </Switch>
     </div>
   );
