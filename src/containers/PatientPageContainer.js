@@ -1,14 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import DoctorCardComponent from '../components/doctorCard/DoctorCardComponent';
-import doctors from '../api/doctorsDemoData';
+import getDoctorsRequest from '../api/getDoctorsRequest';
 
-const PatientPageContainer = () => (
-  <div>
-    <h1> Patient Page </h1>
-    <DoctorCardComponent doctor={doctors[0]} />
+const PatientPageContainer = ({
+  doctors, loading, error, getDoctorsRequest,
+}) => {
+  useEffect(() => {
+    getDoctorsRequest();
+  }, [getDoctorsRequest]);
 
-  </div>
+  let customDoctorCard;
+  if (loading) {
+    customDoctorCard = <div>Loading..... </div>;
+  }
+  if (doctors) {
+    customDoctorCard = <DoctorCardComponent doctor={doctors[0]} />;
+  }
+  if (error) {
+    customDoctorCard = (
+      <div>
+        Error!
+        {error.message}
+      </div>
+    );
+  }
 
-);
+  return (
+    <div>
+      <h1> Patient Page </h1>
+      {customDoctorCard}
+    </div>
+  );
+};
 
-export default PatientPageContainer;
+const mapStateToProps = state => ({
+  doctors: state.doctorsData.doctors,
+  loading: state.doctorsData.loading,
+  error: state.doctorsData.error,
+});
+
+const mapDispatchToProps = {
+  getDoctorsRequest,
+};
+
+PatientPageContainer.propTypes = {
+  doctors: PropTypes.instanceOf(Array).isRequired,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
+  getDoctorsRequest: PropTypes.func.isRequired,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PatientPageContainer);
