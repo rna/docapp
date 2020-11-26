@@ -7,6 +7,8 @@ import AppointmentPageContainer from './containers/AppointmentPageContainer';
 import PatientPageContainer from './containers/PatientPageContainer';
 import DoctorPageContainer from './containers/DoctorPageContainer';
 import autoLoginRequest from './api/autoLoginRequest';
+import PatientRegisterPage from './containers/PatientRegisterPage';
+import DoctorRegisterPage from './containers/DoctorRegisterPage';
 
 const App = ({ autoLoginRequest, userInfo }) => {
   const usertype = localStorage.getItem('usertype');
@@ -33,6 +35,8 @@ const App = ({ autoLoginRequest, userInfo }) => {
         <Route exact path="/:doctorId/book-appointment">
           <AppointmentPageContainer />
         </Route>
+        <Route exact path="/patient-register"><PatientRegisterPage /></Route>
+        <Route exact path="/doctor-register"><DoctorRegisterPage /></Route>
       </Switch>
     </div>
   );

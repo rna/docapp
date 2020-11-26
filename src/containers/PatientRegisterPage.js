@@ -3,44 +3,55 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import userLoginRequest from '../api/userLoginRequest';
+import userRegisterRequest from '../api/userRegisterRequest';
 
-const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
+const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
   const [user, setUser] = useState({
+    name: '',
+    image: '',
     email: '',
     password: '',
   });
 
-  const [userType, setUserType] = useState('patient');
+  const userType = 'patient';
 
   const handleChange = e => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
 
-  const handleUserTypeChange = e => {
-    setUserType(e.target.value);
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
     const userObj = { [userType]: user };
-    userLoginRequest(userObj, userType);
-
+    userRegisterRequest(userObj, userType);
     setUser({
+      name: '',
+      image: '',
       email: '',
       password: '',
     });
   };
 
-  let customLogin;
+  let customRegister;
   if (userInfo.token) {
-    customLogin = <Redirect to="/dashboard" />;
+    customRegister = <Redirect to="/dashboard" />;
   } else {
-    customLogin = (
+    customRegister = (
       <div>
-        <h1> Login Page</h1>
+        <h1> Registration Page for Patients</h1>
         <form onSubmit={handleSubmit}>
+          <label htmlFor="name">
+            {' '}
+            Name
+            <input name="name" type="text" id="name" placeholder="Your Full Name" onChange={handleChange} />
+          </label>
+
+          <label htmlFor="image">
+            {' '}
+            Image Link
+            <input name="image" type="text" id="image" placeholder="Image Link" onChange={handleChange} />
+          </label>
+
           <label htmlFor="email">
             {' '}
             Email ID
@@ -53,11 +64,7 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
             <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} />
           </label>
 
-          <select value={userType} onChange={handleUserTypeChange}>
-            <option value="patient">Patient</option>
-            <option value="doctor">Doctor</option>
-          </select>
-          <button type="submit">Login</button>
+          <button type="submit">Register</button>
         </form>
       </div>
     );
@@ -65,9 +72,11 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
 
   return (
     <div>
-      { customLogin }
-      <Link to="/patient-register">Register as Patient</Link>
-      <Link to="/doctor-register">Register as Doctor</Link>
+      { customRegister }
+      <p>
+        Already registered?
+        <Link to="/">Click Here</Link>
+      </p>
     </div>
   );
 };
@@ -77,15 +86,15 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  userLoginRequest,
+  userRegisterRequest,
 };
 
-LoginPageContainer.propTypes = {
+PatientRegisterPage.propTypes = {
   userInfo: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Object),
   ]).isRequired,
-  userLoginRequest: PropTypes.func.isRequired,
+  userRegisterRequest: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPageContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PatientRegisterPage);
