@@ -1,17 +1,17 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import PatientPageContainer from './containers/PatientPageContainer';
+import LoginPageContainer from './containers/LoginPageContainer';
 import AppointmentPageContainer from './containers/AppointmentPageContainer';
+import PatientPageContainer from './containers/PatientPageContainer';
 
-function App() {
-  return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/"><PatientPageContainer /></Route>
-        <Route exact path="/:doctorId/book-appointment"><AppointmentPageContainer /></Route>
-      </Switch>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Switch>
+      <Route exact path="/"><LoginPageContainer /></Route>
+      <Route exact path="/dashboard"><PatientPageContainer /></Route>
+      <Route exact path="/:doctorId/book-appointment"><AppointmentPageContainer /></Route>
+    </Switch>
+  </div>
+);
 
 export default App;

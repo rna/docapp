@@ -9,7 +9,7 @@ const PatientPageContainer = ({
 }) => {
   useEffect(() => {
     getDoctorsRequest();
-  }, [getDoctorsRequest]);
+  }, []);
 
   let customDoctorCard;
   if (loading) {
