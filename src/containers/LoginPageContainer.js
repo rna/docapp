@@ -24,7 +24,7 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const userObj = { [userType]: user };
-    userLoginRequest(userObj);
+    userLoginRequest(userObj, userType);
 
     setUser({
       email: '',
