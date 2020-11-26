@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import DoctorCardComponent from '../components/doctorCard/DoctorCardComponent';
 import getDoctorsRequest from '../api/getDoctorsRequest';
+import LogOutComponent from '../components/logOut/LogOutComponent';
 
 const PatientPageContainer = ({
   doctors, loading, error, getDoctorsRequest,
@@ -30,6 +31,7 @@ const PatientPageContainer = ({
   return (
     <div>
       <h1> Patient Page </h1>
+      <LogOutComponent />
       {customDoctorCard}
     </div>
   );

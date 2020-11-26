@@ -24,8 +24,6 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const userObj = { [userType]: user };
-    // eslint-disable-next-line
-    console.log(userObj);
     userLoginRequest(userObj);
 
     setUser({

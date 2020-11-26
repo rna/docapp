@@ -12,8 +12,6 @@ function userLoginRequest(loginInfo) {
       body: JSON.stringify(loginInfo),
     }).then(res => res.json())
       .then(data => {
-        // eslint-disable-next-line
-        console.log(data);
         localStorage.setItem('token', data.token);
         dispatch(createUserLogin(data));
       });
