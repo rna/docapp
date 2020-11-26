@@ -78,7 +78,10 @@ const mapDispatchToProps = {
 };
 
 LoginPageContainer.propTypes = {
-  userInfo: PropTypes.instanceOf(Object).isRequired,
+  userInfo: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Object),
+  ]).isRequired,
   userLoginRequest: PropTypes.func.isRequired,
 };
 

@@ -48,7 +48,10 @@ const mapDispatchToProps = {
 
 App.propTypes = {
   autoLoginRequest: PropTypes.func.isRequired,
-  userInfo: PropTypes.instanceOf(Object).isRequired,
+  userInfo: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Object),
+  ]).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

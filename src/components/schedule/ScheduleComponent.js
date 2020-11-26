@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   currentTime, today, tomorrow, thirdDay,
-} from '../helpers/dateHelper';
-import timeSlotFilter from '../helpers/timeSlotFilter';
-import TimeSlotComponent from '../components/timeslot/TimeslotComponent';
+} from '../../helpers/dateHelper';
+import timeSlotFilter from '../../helpers/timeSlotFilter';
+import TimeSlotComponent from '../timeslot/TimeslotComponent';
 
-const ScheduleContainer = ({ schedule }) => {
+const ScheduleComponent = ({ schedule }) => {
   const todaySlots = timeSlotFilter(schedule, today, currentTime);
   const tomorrowSlots = timeSlotFilter(schedule, tomorrow, today);
   const thirdDaySlots = timeSlotFilter(schedule, thirdDay, tomorrow);
@@ -51,8 +51,8 @@ const ScheduleContainer = ({ schedule }) => {
   );
 };
 
-ScheduleContainer.propTypes = {
+ScheduleComponent.propTypes = {
   schedule: PropTypes.instanceOf(Array).isRequired,
 };
 
-export default ScheduleContainer;
+export default ScheduleComponent;

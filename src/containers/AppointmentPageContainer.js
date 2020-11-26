@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import getScheduleRequest from '../api/getScheduleRequest';
-import ScheduleContainer from './ScheduleContainer';
+import ScheduleComponent from '../components/schedule/ScheduleComponent';
 
 const AppointmentPageContainer = ({
   schedule, loading, error, getScheduleRequest,
@@ -14,15 +14,15 @@ const AppointmentPageContainer = ({
     getScheduleRequest(doctorId);
   }, []);
 
-  let customScheduleContainer;
+  let customScheduleComponent;
   if (loading) {
-    customScheduleContainer = <div>Loading..... </div>;
+    customScheduleComponent = <div>Loading..... </div>;
   }
   if (schedule) {
-    customScheduleContainer = <ScheduleContainer schedule={schedule} />;
+    customScheduleComponent = <ScheduleComponent schedule={schedule} />;
   }
   if (error) {
-    customScheduleContainer = (
+    customScheduleComponent = (
       <div>
         Error!
         {error.message}
@@ -32,7 +32,7 @@ const AppointmentPageContainer = ({
 
   return (
     <div>
-      {customScheduleContainer}
+      {customScheduleComponent}
     </div>
   );
 };

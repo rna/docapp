@@ -31,14 +31,7 @@ const DoctorCardComponent = ({ doctor }) => (
 );
 
 DoctorCardComponent.propTypes = {
-  doctor: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    specialization: PropTypes.string.isRequired,
-    experience: PropTypes.number.isRequired,
-    fee: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
+  doctor: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default DoctorCardComponent;
