@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SchedulePageContainer from './containers/SchedulePageContainer';
 import PatientPageContainer from './containers/PatientPageContainer';
-import LoginPageContainer from './containers/LoginPageContainer';
+import LoginPageContainer from './containers/loginPage/LoginPageContainer';
 import autoLoginRequest from './api/autoLoginRequest';
 import PatientRegisterPage from './containers/PatientRegisterPage';
 import DoctorRegisterPage from './containers/DoctorRegisterPage';

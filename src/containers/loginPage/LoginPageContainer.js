@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import userLoginRequest from '../api/userLoginRequest';
+import userLoginRequest from '../../api/userLoginRequest';
+import './loginPageContainer.css';
 
 const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
   const [user, setUser] = useState({
@@ -38,18 +39,14 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
     customLogin = <Redirect to="/dashboard" />;
   } else {
     customLogin = (
-      <div>
-        <h1> Login Page</h1>
+      <div className="login-form">
+        <h1>Login</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">
-            {' '}
-            Email ID
             <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} />
           </label>
 
           <label htmlFor="password">
-            {' '}
-            Password
             <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} />
           </label>
 
@@ -57,17 +54,25 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
             <option value="patient">Patient</option>
             <option value="doctor">Doctor</option>
           </select>
-          <button type="submit">Login</button>
+          <button type="submit">LOGIN</button>
         </form>
+        <span>
+          Register ?
+          {' '}
+          <Link to="/patient-register">Patient</Link>
+          {' Or '}
+          <Link to="/doctor-register">Doctor</Link>
+        </span>
       </div>
     );
   }
 
   return (
     <div>
-      { customLogin }
-      <Link to="/patient-register">Register as Patient</Link>
-      <Link to="/doctor-register">Register as Doctor</Link>
+      <div className="login-left" />
+      <div className="login-right">
+        { customLogin }
+      </div>
     </div>
   );
 };
