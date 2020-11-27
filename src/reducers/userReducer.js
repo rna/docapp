@@ -4,8 +4,10 @@ const initialState = {
 
 const userData = (state = initialState, action) => {
   switch (action.type) {
-    case 'CREATE_USER_LOGIN':
-      return { ...state, user: action.payload };
+    case 'CREATE_USER_LOGIN': {
+      // eslint-disable-next-line
+      console.log(action.payload);
+      return { ...state, user: action.payload }; }
     case 'CREATE_USER_LOGOUT':
       localStorage.clear();
       return { ...state, user: '' };
