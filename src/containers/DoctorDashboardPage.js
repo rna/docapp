@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getPatientBookings } from '../api/getAppointmentsRequest';
+import { getDoctorBookings } from '../api/getAppointmentsRequest';
 import BookingCardComponent from '../components/bookingCard/BookingCardComponent';
 
 const PatientBookings = ({
   appointments, loading, error,
-  getPatientBookings, userInfo,
+  getDoctorBookings, userInfo,
 }) => {
   let userid;
   if (userInfo) {
@@ -14,7 +14,7 @@ const PatientBookings = ({
   }
 
   useEffect(() => {
-    getPatientBookings(userid);
+    getDoctorBookings(userid);
   }, [userid]);
 
   let customAppointmentComponent;
@@ -37,7 +37,7 @@ const PatientBookings = ({
 
   return (
     <div>
-      <h1>Patient Bookings</h1>
+      <h1>Appointments Booked</h1>
       {customAppointmentComponent}
     </div>
   );
@@ -51,7 +51,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  getPatientBookings,
+  getDoctorBookings,
 };
 
 PatientBookings.propTypes = {
@@ -65,7 +65,7 @@ PatientBookings.propTypes = {
   ]).isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
-  getPatientBookings: PropTypes.func.isRequired,
+  getDoctorBookings: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PatientBookings);

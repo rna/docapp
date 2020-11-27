@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import getScheduleRequest from '../api/getScheduleRequest';
 import ScheduleComponent from '../components/schedule/ScheduleComponent';
 
-const AppointmentPageContainer = ({
+const SchedulePageContainer = ({
   schedule, loading, error, getScheduleRequest,
 }) => {
   const { doctorId } = useParams();
@@ -47,7 +47,7 @@ const mapDispatchToProps = {
   getScheduleRequest,
 };
 
-AppointmentPageContainer.propTypes = {
+SchedulePageContainer.propTypes = {
   schedule: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Array),
@@ -60,4 +60,4 @@ AppointmentPageContainer.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(AppointmentPageContainer);
+)(SchedulePageContainer);

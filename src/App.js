@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LoginPageContainer from './containers/LoginPageContainer';
-import AppointmentPageContainer from './containers/AppointmentPageContainer';
+import SchedulePageContainer from './containers/SchedulePageContainer';
 import PatientPageContainer from './containers/PatientPageContainer';
-import DoctorPageContainer from './containers/DoctorPageContainer';
+import LoginPageContainer from './containers/LoginPageContainer';
 import autoLoginRequest from './api/autoLoginRequest';
 import PatientRegisterPage from './containers/PatientRegisterPage';
 import DoctorRegisterPage from './containers/DoctorRegisterPage';
 import PatientBookings from './containers/PatientBookings';
+import DoctorDashboardPage from './containers/DoctorDashboardPage';
 
 const App = ({ autoLoginRequest, userInfo }) => {
   const usertype = localStorage.getItem('usertype');
@@ -23,7 +23,7 @@ const App = ({ autoLoginRequest, userInfo }) => {
   }
 
   if (usertype === 'doctor') {
-    dashboardRoute = <DoctorPageContainer />;
+    dashboardRoute = <DoctorDashboardPage />;
   }
 
   return (
@@ -34,7 +34,7 @@ const App = ({ autoLoginRequest, userInfo }) => {
         </Route>
         <Route exact path="/dashboard">{dashboardRoute}</Route>
         <Route exact path="/:doctorId/book-appointment">
-          <AppointmentPageContainer />
+          <SchedulePageContainer />
         </Route>
         <Route exact path="/patient-register"><PatientRegisterPage /></Route>
         <Route exact path="/doctor-register"><DoctorRegisterPage /></Route>
