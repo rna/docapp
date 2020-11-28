@@ -39,7 +39,7 @@ const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
   } else {
     customRegister = (
       <div className="patient-register-form">
-        <h1> Registration Page for Patients</h1>
+        <h1> Patient Registration</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">
             <input name="name" type="text" id="name" placeholder="Your Full Name" onChange={handleChange} />

@@ -7,7 +7,7 @@ import PatientPageContainer from './containers/PatientPageContainer';
 import LoginPageContainer from './containers/loginPage/LoginPageContainer';
 import autoLoginRequest from './api/autoLoginRequest';
 import PatientRegisterPage from './containers/patientRegisterPage/PatientRegisterPage';
-import DoctorRegisterPage from './containers/DoctorRegisterPage';
+import DoctorRegisterPage from './containers/doctorRegisterPage/DoctorRegisterPage';
 import PatientBookings from './containers/PatientBookings';
 import DoctorDashboardPage from './containers/DoctorDashboardPage';
 

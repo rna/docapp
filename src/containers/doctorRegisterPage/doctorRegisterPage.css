@@ -1,5 +1,5 @@
-.patient-register-left {
-  background: url(../../assets/people.svg);
+.doctor-register-left {
+  background: url(../../assets/hospitals.svg);
   background-size:contain;
   background-repeat:no-repeat;
   background-position: center;
@@ -8,25 +8,25 @@
   left: 0px;
   height: 100%;
 }
-.patient-register-right {
+.doctor-register-right {
   width: 50%;
   position: absolute;
   right: 0px;
   height: 100%;
 }
 
-.patient-register-form {
+.doctor-register-form {
   display: block;
   margin: auto;
   text-align: center;
   padding: 10px;
 }
 
-.patient-register-form h1 {
+.doctor-register-form h1 {
   font-weight: bold;
 }
 
-.patient-register-form input {
+.doctor-register-form input {
   width: 50%;
 	background-color: #f0eaff;
   border: none;
@@ -35,11 +35,11 @@
 	margin: 8px 0;
 }
 
-.patient-register-form button {
+.doctor-register-form button {
   display: block;
   border-radius: 20px;
-	border: 1px solid #f0718d;
-	background-color: #f0718d;
+	border: 1px solid #6e6afc;
+	background-color: #6e6afc;
 	color: white;
 	font-size: 16px;
 	font-weight: bolder;
@@ -47,7 +47,7 @@
   margin: 20px auto;
 }
 
-.patient-register-form a {
+.doctor-register-form a {
 	color: #6e6afc;
 	font-size: 20px;
 	text-decoration: none;
