@@ -18,16 +18,18 @@ const App = ({ autoLoginRequest, userInfo }) => {
   if (usertype && usertoken) {
     useEffect(() => {
       autoLoginRequest(usertype);
-    }, []);
+    }, [autoLoginRequest]);
   }
 
   let dashboardRoute;
-  if (usertype === 'patient' && userInfo.token) {
-    dashboardRoute = <PatientPageContainer />;
-  }
+  if (userInfo.isLoggedIn) {
+    if (usertype === 'doctor') {
+      dashboardRoute = <DoctorDashboardPage />;
+    }
 
-  if (usertype === 'doctor' && userInfo.token) {
-    dashboardRoute = <DoctorDashboardPage />;
+    if (usertype === 'patient') {
+      dashboardRoute = <PatientPageContainer />;
+    }
   }
 
   return (
@@ -57,7 +59,7 @@ const App = ({ autoLoginRequest, userInfo }) => {
 };
 
 const mapStateToProps = state => ({
-  userInfo: state.userData.user,
+  userInfo: state.userData,
 });
 
 const mapDispatchToProps = {
@@ -66,10 +68,7 @@ const mapDispatchToProps = {
 
 App.propTypes = {
   autoLoginRequest: PropTypes.func.isRequired,
-  userInfo: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Object),
-  ]).isRequired,
+  userInfo: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

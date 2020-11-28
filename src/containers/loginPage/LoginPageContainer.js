@@ -66,14 +66,14 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
     customLogin = <div>Loading....</div>;
   }
 
-  if (userInfo.error) {
-    customLogin = (
-      <div>
-        Error!
-        {userInfo.error.message}
-      </div>
-    );
-  }
+  // if (userInfo.error) {
+  //   customLogin = (
+  //     <div>
+  //       Error!
+  //       {userInfo.error.message}
+  //     </div>
+  //   );
+  // }
 
   if (userInfo.isLoggedIn && userInfo.user) {
     customLogin = <Redirect to="/dashboard" />;

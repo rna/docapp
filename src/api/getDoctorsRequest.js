@@ -9,6 +9,8 @@ function getDoctorsRequest() {
       .get(url)
       .then(res => {
         const doctorsList = res.data;
+        // eslint-disable-next-line
+        console.log(res.data);
         dispatch(action.fetchDoctorsSuccess(doctorsList));
       })
       .catch(err => dispatch(action.fetchDoctorsFailure(err)));

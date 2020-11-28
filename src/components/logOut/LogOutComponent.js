@@ -8,8 +8,8 @@ const LogOutComponent = ({ createUserLogout }) => {
   const [logged, setLogged] = useState(false);
   const handleClick = e => {
     e.preventDefault();
-    createUserLogout();
     setLogged(true);
+    createUserLogout();
   };
 
   if (logged) {
