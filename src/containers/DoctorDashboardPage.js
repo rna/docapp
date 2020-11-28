@@ -59,7 +59,10 @@ DoctorDashboardPage.propTypes = {
     PropTypes.instanceOf(Array),
   ]).isRequired,
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.string.isRequired,
+  error: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Object),
+  ]).isRequired,
   getDoctorBookings: PropTypes.func.isRequired,
 };
 

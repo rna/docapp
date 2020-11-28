@@ -35,7 +35,7 @@ const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
 
   let customRegister;
   if (userInfo.token) {
-    customRegister = <Redirect to="/dashboard" />;
+    customRegister = <Redirect to="/home" />;
   } else {
     customRegister = (
       <div className="patient-register-form">
@@ -61,7 +61,7 @@ const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
         </form>
         <span>
           {'Already registered? '}
-          <Link to="/">Click Here</Link>
+          <Link to="/login">Click Here</Link>
         </span>
       </div>
     );

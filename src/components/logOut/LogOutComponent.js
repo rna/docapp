@@ -13,7 +13,7 @@ const LogOutComponent = ({ createUserLogout }) => {
   };
 
   if (logged) {
-    return <Redirect to="/" />;
+    return <Redirect to="/login" />;
   }
 
   return (

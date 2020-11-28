@@ -79,7 +79,7 @@ const DoctorRegisterPage = ({ userRegisterRequest, userInfo }) => {
         </form>
         <span>
           {'Already registered? '}
-          <Link to="/">Click Here</Link>
+          <Link to="/login">Click Here</Link>
         </span>
       </div>
     );

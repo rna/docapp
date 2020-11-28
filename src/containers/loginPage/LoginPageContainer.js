@@ -76,7 +76,8 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
   // }
 
   if (userInfo.isLoggedIn && userInfo.user) {
-    customLogin = <Redirect to="/dashboard" />;
+    if (userType === 'patient') { customLogin = <Redirect to="/home" />; }
+    if (userType === 'doctor') { customLogin = <Redirect to="/dashboard" />; }
   }
 
   return (
