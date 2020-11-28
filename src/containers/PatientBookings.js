@@ -5,32 +5,27 @@ import { getPatientBookings } from '../api/getAppointmentsRequest';
 import BookingCardComponent from '../components/bookingCard/BookingCardComponent';
 
 const PatientBookings = ({
-  appointments, loading, error,
+  appointmentsInfo,
   getPatientBookings, userInfo,
 }) => {
-  let userid;
-  if (userInfo) {
-    userid = userInfo.id;
-  }
-
   useEffect(() => {
-    getPatientBookings(userid);
-  }, [userid]);
+    getPatientBookings(userInfo.user.id);
+  }, [userInfo.user.id]);
 
   let customAppointmentComponent;
-  if (loading) {
+  if (appointmentsInfo.loading) {
     customAppointmentComponent = <div>Loading..... </div>;
   }
-  if (appointments) {
-    customAppointmentComponent = appointments.map(
+  if (appointmentsInfo.appointments) {
+    customAppointmentComponent = appointmentsInfo.appointments.map(
       booking => <BookingCardComponent key={booking.id} booking={booking} />,
     );
   }
-  if (error) {
+  if (appointmentsInfo.error) {
     customAppointmentComponent = (
       <div>
         Error!
-        {error.message}
+        {appointmentsInfo.error.message}
       </div>
     );
   }
@@ -44,10 +39,8 @@ const PatientBookings = ({
 };
 
 const mapStateToProps = state => ({
-  userInfo: state.userData && state.userData.user,
-  appointments: state.appointmentsData.appointments,
-  loading: state.appointmentsData.loading,
-  error: state.appointmentsData.error,
+  userInfo: state.userData,
+  appointmentsInfo: state.appointmentsData,
 });
 
 const mapDispatchToProps = {
@@ -55,16 +48,8 @@ const mapDispatchToProps = {
 };
 
 PatientBookings.propTypes = {
-  userInfo: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Object),
-  ]).isRequired,
-  appointments: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Array),
-  ]).isRequired,
-  loading: PropTypes.bool.isRequired,
-  error: PropTypes.string.isRequired,
+  userInfo: PropTypes.instanceOf(Object).isRequired,
+  appointmentsInfo: PropTypes.instanceOf(Object).isRequired,
   getPatientBookings: PropTypes.func.isRequired,
 };
 

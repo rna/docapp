@@ -8,14 +8,9 @@ const DoctorDashboardPage = ({
   appointments, loading, error,
   getDoctorBookings, userInfo,
 }) => {
-  let userid;
-  if (userInfo) {
-    userid = userInfo.id;
-  }
-
   useEffect(() => {
-    getDoctorBookings(userid);
-  }, [getDoctorBookings, userInfo]);
+    getDoctorBookings(userInfo.user.id);
+  }, [userInfo.user.id]);
 
   let customAppointmentComponent;
   if (loading) {
@@ -44,7 +39,7 @@ const DoctorDashboardPage = ({
 };
 
 const mapStateToProps = state => ({
-  userInfo: state.userData && state.userData.user,
+  userInfo: state.userData,
   appointments: state.appointmentsData.appointments,
   loading: state.appointmentsData.loading,
   error: state.appointmentsData.error,
