@@ -3,6 +3,7 @@ const initialState = {
   isLoggedIn: false,
   loading: false,
   error: '',
+  userType: '',
 };
 
 const userData = (state = initialState, action) => {
@@ -16,6 +17,7 @@ const userData = (state = initialState, action) => {
         loading: false,
         isLoggedIn: true,
         user: action.payload,
+        userType: action.userType,
       };
     }
     case 'CREATE_USER_LOGIN_FAILURE':
@@ -26,7 +28,9 @@ const userData = (state = initialState, action) => {
       };
     case 'CREATE_USER_LOGOUT': {
       localStorage.clear();
-      return { ...state, isLoggedIn: false, user: '' };
+      return {
+        ...state, isLoggedIn: false, user: '', userType: '',
+      };
     }
     default:
       return state;

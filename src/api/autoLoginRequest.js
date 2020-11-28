@@ -8,7 +8,7 @@ function autoLoginRequest(userType) {
     const url = `https://docapp-api.herokuapp.com/api/v1/${userType}/auto_login`;
     axios
       .get(url, { headers })
-      .then(res => dispatch(action.createUserLoginSuccess(res.data)))
+      .then(res => dispatch(action.createUserLoginSuccess(res.data, userType)))
       .catch(err => dispatch(action.createUserLoginFailure(err)));
   };
 }

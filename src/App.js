@@ -20,13 +20,15 @@ const App = ({ autoLoginRequest, userInfo }) => {
   if (usertype && usertoken) {
     useEffect(() => {
       autoLoginRequest(usertype);
-    }, []);
+    }, [autoLoginRequest]);
   }
+
+  const homeRoute = (usertype === 'patient') ? <Redirect to="/home" /> : <Redirect to="/dashboard" />;
 
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" render={() => (userInfo.isLoggedIn ? ((usertype === 'patient') ? <Redirect to="/dashboard" /> : <Redirect to="/dashboard" />) : <Redirect to="/login" />)} />
+        <Route exact path="/" render={() => (userInfo.isLoggedIn ? homeRoute : <Redirect to="/login" />)} />
         <Route path="/login" component={LoginPageContainer} />
         <Route path="/patient-register" component={PatientRegisterPage} />
         <Route path="/doctor-register" component={DoctorRegisterPage} />

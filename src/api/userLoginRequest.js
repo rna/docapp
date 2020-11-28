@@ -11,7 +11,7 @@ function userLoginRequest(loginInfo, userType) {
       .then(res => {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('usertype', userType);
-        dispatch(action.createUserLoginSuccess(res.data));
+        dispatch(action.createUserLoginSuccess(res.data, userType));
       })
       .catch(err => dispatch(action.createUserLoginFailure(err)));
   };
