@@ -2,15 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import postAppointment from '../../api/postAppointment';
 import './timeSlotComponent.css';
 
 const TimeslotComponent = ({ user, slot }) => {
   const appObj = { appointment: { doctor_id: slot.doctor_id, schedule_id: slot.id } };
   const history = useHistory();
+
   const handleClick = e => {
     e.preventDefault();
     postAppointment(user.id, appObj);
+    confirmAlert({
+      title: 'Appointment confirmed!!!',
+      buttons: [
+        {
+          label: 'Close',
+        },
+      ],
+    });
     history.push({ pathname: '/bookings' });
   };
 
