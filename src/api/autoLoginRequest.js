@@ -1,18 +1,15 @@
-import { createUserLogin } from '../actions/userActions';
+import axios from 'axios';
+import * as action from '../actions/userActions';
+import headers from '../helpers/headers';
 
 function autoLoginRequest(userType) {
   return dispatch => {
+    dispatch(action.createUserLoginBegin());
     const url = `https://docapp-api.herokuapp.com/api/v1/${userType}/auto_login`;
-    fetch(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-    }).then(res => res.json())
-      .then(data => {
-        dispatch(createUserLogin(data));
-      });
+    axios
+      .get(url, { headers })
+      .then(res => dispatch(action.createUserLoginSuccess(res.data)))
+      .catch(err => dispatch(action.createUserLoginFailure(err)));
   };
 }
 

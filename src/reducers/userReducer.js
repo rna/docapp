@@ -1,20 +1,33 @@
 const initialState = {
   user: '',
+  isLoggedIn: false,
+  loading: false,
+  error: '',
 };
 
 const userData = (state = initialState, action) => {
   switch (action.type) {
-    case 'CREATE_USER_LOGIN': {
-      // eslint-disable-next-line
-      console.log(action.payload);
-      return { ...state, user: action.payload }; }
-    case 'CREATE_USER_LOGOUT':
-      localStorage.clear();
-      return { ...state, user: '' };
-    case 'FETCH_SCHEDULE_FAILURE':
+    case 'CREATE_USER_LOGIN_BEGIN': {
+      return { ...state, loading: true };
+    }
+    case 'CREATE_USER_LOGIN_SUCCESS': {
       return {
-        ...state, loading: false, error: action.payload, schedule: '',
+        ...state,
+        loading: false,
+        isLoggedIn: true,
+        user: action.payload,
       };
+    }
+    case 'CREATE_USER_LOGIN_FAILURE':
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case 'CREATE_USER_LOGOUT': {
+      localStorage.clear();
+      return { ...state, isLoggedIn: false, user: '' };
+    }
     default:
       return state;
   }

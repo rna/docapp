@@ -13,16 +13,20 @@ import DoctorDashboardPage from './containers/DoctorDashboardPage';
 
 const App = ({ autoLoginRequest, userInfo }) => {
   const usertype = localStorage.getItem('usertype');
-  useEffect(() => {
-    autoLoginRequest(usertype);
-  }, [autoLoginRequest]);
+  const usertoken = localStorage.getItem('token');
+
+  if (usertype && usertoken) {
+    useEffect(() => {
+      autoLoginRequest(usertype);
+    }, []);
+  }
 
   let dashboardRoute;
-  if (usertype === 'patient') {
+  if (usertype === 'patient' && userInfo.token) {
     dashboardRoute = <PatientPageContainer />;
   }
 
-  if (usertype === 'doctor') {
+  if (usertype === 'doctor' && userInfo.token) {
     dashboardRoute = <DoctorDashboardPage />;
   }
 
@@ -30,15 +34,23 @@ const App = ({ autoLoginRequest, userInfo }) => {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          {userInfo.token || dashboardRoute ? dashboardRoute : <LoginPageContainer />}
+          {dashboardRoute || <LoginPageContainer />}
         </Route>
-        <Route exact path="/dashboard">{dashboardRoute}</Route>
+        <Route exact path="/dashboard">
+          {dashboardRoute}
+        </Route>
         <Route exact path="/:doctorId/book-appointment">
           <SchedulePageContainer />
         </Route>
-        <Route exact path="/patient-register"><PatientRegisterPage /></Route>
-        <Route exact path="/doctor-register"><DoctorRegisterPage /></Route>
-        <Route exact path="/bookings"><PatientBookings /></Route>
+        <Route exact path="/patient-register">
+          <PatientRegisterPage />
+        </Route>
+        <Route exact path="/doctor-register">
+          <DoctorRegisterPage />
+        </Route>
+        <Route exact path="/bookings">
+          <PatientBookings />
+        </Route>
       </Switch>
     </div>
   );

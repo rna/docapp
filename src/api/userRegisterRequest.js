@@ -1,4 +1,4 @@
-import { createUserLogin } from '../actions/userActions';
+import * as action from '../actions/userActions';
 
 function userRegisterRequest(loginInfo, userType) {
   return dispatch => {
@@ -14,7 +14,7 @@ function userRegisterRequest(loginInfo, userType) {
       .then(data => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('usertype', userType);
-        dispatch(createUserLogin(data));
+        dispatch(action.createUserLoginSuccess(data));
       });
   };
 }

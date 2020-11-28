@@ -34,37 +34,49 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
     });
   };
 
-  let customLogin;
-  if (userInfo.token) {
-    customLogin = <Redirect to="/dashboard" />;
-  } else {
+  let customLogin = (
+    <div className="login-form">
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="email">
+          <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} required />
+        </label>
+
+        <label htmlFor="password">
+          <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} required />
+        </label>
+
+        <select value={userType} onChange={handleUserTypeChange}>
+          <option value="patient">Patient</option>
+          <option value="doctor">Doctor</option>
+        </select>
+        <button type="submit">LOGIN</button>
+      </form>
+      <span>
+        Register ?
+        {' '}
+        <Link to="/patient-register">Patient</Link>
+        {' Or '}
+        <Link to="/doctor-register">Doctor</Link>
+      </span>
+    </div>
+  );
+
+  if (userInfo.loading) {
+    customLogin = <div>Loading....</div>;
+  }
+
+  if (userInfo.error) {
     customLogin = (
-      <div className="login-form">
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email">
-            <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} />
-          </label>
-
-          <label htmlFor="password">
-            <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} />
-          </label>
-
-          <select value={userType} onChange={handleUserTypeChange}>
-            <option value="patient">Patient</option>
-            <option value="doctor">Doctor</option>
-          </select>
-          <button type="submit">LOGIN</button>
-        </form>
-        <span>
-          Register ?
-          {' '}
-          <Link to="/patient-register">Patient</Link>
-          {' Or '}
-          <Link to="/doctor-register">Doctor</Link>
-        </span>
+      <div>
+        Error!
+        {userInfo.error.message}
       </div>
     );
+  }
+
+  if (userInfo.isLoggedIn && userInfo.user) {
+    customLogin = <Redirect to="/dashboard" />;
   }
 
   return (
@@ -78,7 +90,7 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
 };
 
 const mapStateToProps = state => ({
-  userInfo: state.userData.user,
+  userInfo: state.userData,
 });
 
 const mapDispatchToProps = {
@@ -86,10 +98,7 @@ const mapDispatchToProps = {
 };
 
 LoginPageContainer.propTypes = {
-  userInfo: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Object),
-  ]).isRequired,
+  userInfo: PropTypes.instanceOf(Object).isRequired,
   userLoginRequest: PropTypes.func.isRequired,
 };
 
