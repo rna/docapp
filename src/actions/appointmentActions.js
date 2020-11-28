@@ -13,15 +13,15 @@ export const fetchPatientBookingsFailure = error => ({
 });
 
 export const fetchDoctorBookingsBegin = () => ({
-  type: 'FETCH_DOCT_APPOINTMENT_BEGIN',
+  type: 'FETCH_DOCTOR_APPOINTMENT_BEGIN',
 });
 
 export const fetchDoctorBookingsSuccess = data => ({
-  type: 'FETCH_DOCT_APPOINTMENT_SUCCESS',
+  type: 'FETCH_DOCTOR_APPOINTMENT_SUCCESS',
   payload: data,
 });
 
 export const fetchDoctorBookingsFailure = error => ({
-  type: 'FETCH_DOCT_APPOINTMENT_FAILURE',
+  type: 'FETCH_DOCTOR_APPOINTMENT_FAILURE',
   payload: error,
 });

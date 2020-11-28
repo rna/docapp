@@ -36,7 +36,7 @@ const App = ({ autoLoginRequest, userInfo }) => {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          {dashboardRoute || <LoginPageContainer />}
+          <LoginPageContainer />
         </Route>
         <Route exact path="/dashboard">
           {dashboardRoute}

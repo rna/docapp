@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getDoctorBookings } from '../api/getAppointmentsRequest';
 import BookingCardComponent from '../components/bookingCard/BookingCardComponent';
 
-const PatientBookings = ({
+const DoctorDashboardPage = ({
   appointments, loading, error,
   getDoctorBookings, userInfo,
 }) => {
@@ -15,7 +15,7 @@ const PatientBookings = ({
 
   useEffect(() => {
     getDoctorBookings(userid);
-  }, [userid]);
+  }, [getDoctorBookings, userInfo]);
 
   let customAppointmentComponent;
   if (loading) {
@@ -54,7 +54,7 @@ const mapDispatchToProps = {
   getDoctorBookings,
 };
 
-PatientBookings.propTypes = {
+DoctorDashboardPage.propTypes = {
   userInfo: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Object),
@@ -68,4 +68,4 @@ PatientBookings.propTypes = {
   getDoctorBookings: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PatientBookings);
+export default connect(mapStateToProps, mapDispatchToProps)(DoctorDashboardPage);
