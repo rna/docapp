@@ -36,7 +36,7 @@ const ScheduleComponent = ({ schedule }) => {
           <tr>
             <th>Today</th>
             <th>Tomorrow</th>
-            <th>{thirdDay.toLocaleDateString()}</th>
+            <th>{tomorrow.toLocaleDateString()}</th>
           </tr>
         </thead>
         <tbody>

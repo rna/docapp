@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import postAppointment from '../../api/postAppointment';
+import './timeSlotComponent.css';
 
 const TimeslotComponent = ({ user, slot }) => {
   const appObj = { appointment: { doctor_id: slot.doctor_id, schedule_id: slot.id } };
@@ -15,8 +16,9 @@ const TimeslotComponent = ({ user, slot }) => {
 
   const timeSlot = slot.time.split(' ')[1];
 
+  const slotClass = slot.available ? 'slot-not-booked' : 'slot-booked';
   return (
-    <button type="button" onClick={handleClick}>
+    <button className={slotClass} type="button" onClick={slot.available ? handleClick : null}>
       {' '}
       {timeSlot}
     </button>

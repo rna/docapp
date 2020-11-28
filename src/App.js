@@ -29,13 +29,13 @@ const App = ({ autoLoginRequest, userInfo }) => {
     <div className="App">
       <Switch>
         <Route exact path="/" render={() => (userInfo.isLoggedIn ? homeRoute : <Redirect to="/login" />)} />
-        <Route path="/login" component={LoginPageContainer} />
-        <Route path="/patient-register" component={PatientRegisterPage} />
-        <Route path="/doctor-register" component={DoctorRegisterPage} />
-        <PrivateRoute path="/bookings" isAuthenticated={userInfo.isLoggedIn} component={PatientBookings} />
-        <PrivateRoute path="/home" isAuthenticated={userInfo.isLoggedIn} component={PatientPageContainer} />
-        <PrivateRoute path="/dashboard" isAuthenticated={userInfo.isLoggedIn} component={DoctorDashboardPage} />
-        <PrivateRoute path="/:doctorId/book-appointment" isAuthenticated={userInfo.isLoggedIn} component={SchedulePageContainer} />
+        <Route exact path="/login" component={LoginPageContainer} />
+        <Route exact path="/patient-register" component={PatientRegisterPage} />
+        <Route exact path="/doctor-register" component={DoctorRegisterPage} />
+        <PrivateRoute exact path="/bookings" isAuthenticated={userInfo.isLoggedIn} component={PatientBookings} />
+        <PrivateRoute exact path="/home" isAuthenticated={userInfo.isLoggedIn} component={PatientPageContainer} />
+        <PrivateRoute exact path="/dashboard" isAuthenticated={userInfo.isLoggedIn} component={DoctorDashboardPage} />
+        <PrivateRoute exact path="/:doctorId/book-appointment" isAuthenticated={userInfo.isLoggedIn} component={SchedulePageContainer} />
       </Switch>
     </div>
   );

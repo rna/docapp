@@ -1,0 +1,13 @@
+.slot-booked, .slot-not-booked {
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.slot-booked {
+  border: 2px solid lightgrey;
+  color: grey;
+}
+
+.slot-not-booked {
+  border: 2px solid black;
+}
