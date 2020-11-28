@@ -14,7 +14,7 @@ const DoctorDashboardPage = ({
 
   let customAppointmentComponent;
   if (loading) {
-    customAppointmentComponent = <div>Loading..... </div>;
+    customAppointmentComponent = <div className="loading-container"><div className="loading" /></div>;
   }
   if (appointments) {
     customAppointmentComponent = appointments.map(

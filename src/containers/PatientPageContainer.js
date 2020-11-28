@@ -14,7 +14,7 @@ const PatientPageContainer = ({
 
   let customDoctorCard;
   if (loading) {
-    customDoctorCard = <div>Loading..... </div>;
+    customDoctorCard = <div className="loading-container"><div className="loading" /></div>;
   }
   if (doctors) {
     customDoctorCard = doctors.map(d => <DoctorCardComponent key={d.name} doctor={d} />);

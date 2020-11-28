@@ -63,7 +63,7 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
   );
 
   if (userInfo.loading) {
-    customLogin = <div>Loading....</div>;
+    customLogin = <div className="loading-container"><div className="loading" /></div>;
   }
 
   // if (userInfo.error) {

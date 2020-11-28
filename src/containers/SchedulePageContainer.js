@@ -16,7 +16,7 @@ const SchedulePageContainer = ({
 
   let customScheduleComponent;
   if (loading) {
-    customScheduleComponent = <div>Loading..... </div>;
+    customScheduleComponent = <div className="loading-container"><div className="loading" /></div>;
   }
   if (schedule) {
     customScheduleComponent = <ScheduleComponent schedule={schedule} />;

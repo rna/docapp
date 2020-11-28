@@ -14,7 +14,7 @@ const PatientBookings = ({
 
   let customAppointmentComponent;
   if (appointmentsInfo.loading) {
-    customAppointmentComponent = <div>Loading..... </div>;
+    customAppointmentComponent = <div className="loading-container"><div className="loading" /></div>;
   }
   if (appointmentsInfo.appointments) {
     customAppointmentComponent = appointmentsInfo.appointments.map(
