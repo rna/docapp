@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-import userRegisterRequest from '../api/userRegisterRequest';
+import userRegisterRequest from '../../api/userRegisterRequest';
+import './patientRegisterPage.css';
 
 const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
   const [user, setUser] = useState({
@@ -37,46 +38,41 @@ const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
     customRegister = <Redirect to="/dashboard" />;
   } else {
     customRegister = (
-      <div>
+      <div className="patient-register-form">
         <h1> Registration Page for Patients</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">
-            {' '}
-            Name
             <input name="name" type="text" id="name" placeholder="Your Full Name" onChange={handleChange} />
           </label>
 
           <label htmlFor="image">
-            {' '}
-            Image Link
-            <input name="image" type="text" id="image" placeholder="Image Link" onChange={handleChange} />
+            <input name="image" type="text" id="image" placeholder="Image url" onChange={handleChange} />
           </label>
 
           <label htmlFor="email">
-            {' '}
-            Email ID
             <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} />
           </label>
 
           <label htmlFor="password">
-            {' '}
-            Password
             <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} />
           </label>
 
           <button type="submit">Register</button>
         </form>
+        <span>
+          {'Already registered? '}
+          <Link to="/">Click Here</Link>
+        </span>
       </div>
     );
   }
 
   return (
     <div>
-      { customRegister }
-      <p>
-        Already registered?
-        <Link to="/">Click Here</Link>
-      </p>
+      <div className="patient-register-left" />
+      <div className="patient-register-right">
+        { customRegister }
+      </div>
     </div>
   );
 };

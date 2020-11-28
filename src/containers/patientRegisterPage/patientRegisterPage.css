@@ -1,0 +1,55 @@
+.patient-register-left {
+  background: url(../../assets/doctor.svg);
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position: center;
+  width: 50%;
+  position: absolute;
+  left: 0px;
+  height: 100%;
+}
+.patient-register-right {
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  height: 100%;
+}
+
+.patient-register-form {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.patient-register-form h1 {
+  font-weight: bold;
+}
+
+.patient-register-form input {
+  width: 50%;
+	background-color: #f0eaff;
+  border: none;
+  font-size: 18px;
+	padding: 12px 15px;
+	margin: 8px 0;
+}
+
+.patient-register-form button {
+  display: block;
+  border-radius: 20px;
+	border: 1px solid #f0718d;
+	background-color: #f0718d;
+	color: white;
+	font-size: 16px;
+	font-weight: bolder;
+  padding: 12px 45px;
+  margin: 20px auto;
+}
+
+.patient-register-form a {
+	color: #6e6afc;
+	font-size: 20px;
+	text-decoration: none;
+	margin: 15px 0;
+}
