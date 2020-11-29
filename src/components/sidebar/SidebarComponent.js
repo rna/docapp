@@ -25,8 +25,8 @@ const SidebarComponent = ({ userType }) => {
         <NavLink to="/dashboard" activeClassName="selected">
           Dashboard
         </NavLink>
-        <NavLink to="/home" activeClassName="selected">
-          Profile
+        <NavLink to="/new-schedule" activeClassName="selected">
+          New Schedule
         </NavLink>
       </div>
     );

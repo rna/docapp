@@ -1,0 +1,44 @@
+
+.new-schedule {
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+
+.new-schedule h2 {
+  font-weight: bold;
+  color: #b09cf1;
+  line-height: 0.7em;
+}
+.new-schedule label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-schedule input {
+  width: 200px;
+  background-color: #f0eaff;
+  border: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin: 5px 0;
+}
+
+.new-schedule button {
+  display: block;
+  border-radius: 20px;
+  border: 1px solid #6e6afc;
+  background-color: #6e6afc;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  padding: 12px 45px;
+  margin: 20px auto;
+}
+
+.new-schedule a {
+  color: #6e6afc;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 15px 0;
+}

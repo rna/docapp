@@ -14,6 +14,7 @@ import DoctorDashboardPage from './containers/DoctorDashboardPage';
 import PrivateRoute from './components/PrivateRoute';
 import HeaderComponent from './components/header/HeaderComponent';
 import SidebarComponent from './components/sidebar/SidebarComponent';
+import NewScheduleContainer from './containers/newSchedule/NewScheduleContainer';
 
 const App = ({ autoLoginRequest, userInfo }) => {
   const usertype = localStorage.getItem('usertype');
@@ -41,6 +42,7 @@ const App = ({ autoLoginRequest, userInfo }) => {
           <PrivateRoute exact path="/bookings" isAuthenticated={userInfo.isLoggedIn} component={PatientBookings} />
           <PrivateRoute exact path="/home" isAuthenticated={userInfo.isLoggedIn} component={PatientPageContainer} />
           <PrivateRoute exact path="/dashboard" isAuthenticated={userInfo.isLoggedIn} component={DoctorDashboardPage} />
+          <PrivateRoute exact path="/new-schedule" isAuthenticated={userInfo.isLoggedIn} component={NewScheduleContainer} />
           <PrivateRoute exact path="/:doctorId/book-appointment" isAuthenticated={userInfo.isLoggedIn} component={SchedulePageContainer} />
         </Switch>
       </div>

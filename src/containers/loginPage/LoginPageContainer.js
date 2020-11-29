@@ -54,7 +54,7 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
         </select>
         <button type="submit">LOGIN</button>
       </form>
-      {userInfo.user.error ? (<div className="error-class"><p>{userInfo.user.error}</p></div>) : null}
+      {userInfo.error ? (<div className="error-class"><p>{userInfo.user.error}</p></div>) : null}
       <span>
         Register ?
         {' '}
