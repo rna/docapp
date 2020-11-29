@@ -36,10 +36,10 @@ body {
   z-index: 999;
 }
 
-.required:after {
-  content:" *";
+.required::after {
+  content: " *";
   color: red;
-  position: absolute; 
+  position: absolute;
   margin-left: -15px;
   margin-top: 10px;
 }

@@ -10,11 +10,13 @@
   color: #b09cf1;
   line-height: 0.7em;
 }
+
 .new-schedule label {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .new-schedule input {
   width: 200px;
   background-color: #f0eaff;
