@@ -13,7 +13,7 @@ const TimeslotComponent = ({ user, slot }) => {
 
   const handleClick = e => {
     e.preventDefault();
-    postAppointment(user.id, appObj);
+    postAppointment(user.patient.id, appObj);
     confirmAlert({
       title: 'Appointment confirmed!!!',
       buttons: [
