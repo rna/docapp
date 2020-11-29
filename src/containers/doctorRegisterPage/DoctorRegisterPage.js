@@ -49,32 +49,32 @@ const DoctorRegisterPage = ({ userRegisterRequest, userInfo }) => {
         <img alt="logo" className="logo" src={logo} />
         <h1> Doctor Registration</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">
-            <input name="name" type="text" id="name" placeholder="Your Full Name" onChange={handleChange} />
+          <label className="required" htmlFor="name">
+            <input name="name" type="text" id="name" placeholder="Your Full Name" onChange={handleChange} required />
           </label>
 
-          <label htmlFor="specialization">
-            <input name="specialization" type="text" id="specialization" placeholder="Specialization" onChange={handleChange} />
+          <label className="required" htmlFor="specialization">
+            <input name="specialization" type="text" id="specialization" placeholder="Specialization" onChange={handleChange} required />
           </label>
 
-          <label htmlFor="experience">
-            <input name="experience" type="number" id="experience" placeholder="Experience (in Years)" onChange={handleChange} />
+          <label className="required" htmlFor="experience">
+            <input name="experience" type="number" id="experience" placeholder="Experience (in Years)" onChange={handleChange} required />
           </label>
 
-          <label htmlFor="fee">
-            <input name="fee" type="number" id="fee" placeholder="Consulation Fee (in USD)" onChange={handleChange} />
+          <label className="required" htmlFor="fee">
+            <input name="fee" type="number" id="fee" placeholder="Consulation Fee (in USD)" onChange={handleChange} required />
           </label>
 
           <label htmlFor="image">
             <input name="image" type="text" id="image" placeholder="Image url" onChange={handleChange} />
           </label>
 
-          <label htmlFor="email">
-            <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} />
+          <label className="required" htmlFor="email">
+            <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} required />
           </label>
 
-          <label htmlFor="password">
-            <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} />
+          <label className="required" htmlFor="password">
+            <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} required />
           </label>
 
           <button type="submit">Register</button>

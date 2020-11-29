@@ -40,11 +40,11 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
       <img alt="logo" className="logo" src={logo} />
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
+        <label className="required" htmlFor="email">
           <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} required />
         </label>
 
-        <label htmlFor="password">
+        <label className="required" htmlFor="password">
           <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} required />
         </label>
 

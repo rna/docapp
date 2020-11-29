@@ -43,20 +43,20 @@ const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
         <img alt="logo" className="logo" src={logo} />
         <h1> Patient Registration</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">
-            <input name="name" type="text" id="name" placeholder="Your Full Name" onChange={handleChange} />
+          <label className="required" htmlFor="name">
+            <input name="name" type="text" id="name" placeholder="Your Full Name" onChange={handleChange} required />
           </label>
 
           <label htmlFor="image">
             <input name="image" type="text" id="image" placeholder="Image url" onChange={handleChange} />
           </label>
 
-          <label htmlFor="email">
-            <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} />
+          <label className="required" htmlFor="email">
+            <input name="email" type="email" id="email" placeholder="Email address" onChange={handleChange} required />
           </label>
 
-          <label htmlFor="password">
-            <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} />
+          <label className="required" htmlFor="password">
+            <input name="password" id="password" type="password" placeholder="Password" onChange={handleChange} required />
           </label>
 
           <button type="submit">Register</button>

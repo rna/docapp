@@ -36,6 +36,11 @@ body {
   z-index: 999;
 }
 
+.required:after {
+  content:" *";
+  color: red;
+}
+
 .loading {
   position: fixed;
   display: inline-block;
