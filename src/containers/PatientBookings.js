@@ -10,7 +10,7 @@ const PatientBookings = ({
 }) => {
   useEffect(() => {
     getPatientBookings(userInfo.user.id);
-  }, [userInfo.user.id]);
+  }, [getPatientBookings, userInfo.user.id]);
 
   let customAppointmentComponent;
   if (appointmentsInfo.loading) {

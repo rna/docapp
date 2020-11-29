@@ -10,7 +10,7 @@ const DoctorDashboardPage = ({
 }) => {
   useEffect(() => {
     getDoctorBookings(userInfo.user.id);
-  }, [userInfo.user.id]);
+  }, [getDoctorBookings, userInfo.user.id]);
 
   let customAppointmentComponent;
   if (loading) {
