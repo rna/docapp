@@ -5,6 +5,7 @@ import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import userLoginRequest from '../../api/userLoginRequest';
 import './loginPageContainer.css';
+import logo from '../../assets/logo.png';
 
 const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
   const [user, setUser] = useState({
@@ -36,6 +37,7 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
 
   let customLogin = (
     <div className="login-form">
+      <img alt="logo" className="logo" src={logo} />
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">

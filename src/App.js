@@ -12,6 +12,7 @@ import DoctorRegisterPage from './containers/doctorRegisterPage/DoctorRegisterPa
 import PatientBookings from './containers/PatientBookings';
 import DoctorDashboardPage from './containers/DoctorDashboardPage';
 import PrivateRoute from './components/PrivateRoute';
+import HeaderComponent from './components/header/HeaderComponent';
 
 const App = ({ autoLoginRequest, userInfo }) => {
   const usertype = localStorage.getItem('usertype');
@@ -24,9 +25,10 @@ const App = ({ autoLoginRequest, userInfo }) => {
   }
 
   const homeRoute = (usertype === 'patient') ? <Redirect to="/home" /> : <Redirect to="/dashboard" />;
-
+  const header = userInfo.isLoggedIn ? <HeaderComponent /> : null;
   return (
     <div className="App">
+      <div>{header}</div>
       <Switch>
         <Route exact path="/" render={() => (userInfo.isLoggedIn ? homeRoute : <Redirect to="/login" />)} />
         <Route exact path="/login" component={LoginPageContainer} />

@@ -25,6 +25,8 @@
 
 .doctor-register-form h1 {
   font-weight: bold;
+  color: #b09cf1;
+  line-height: 0.7em;
 }
 
 .doctor-register-form input {
@@ -32,8 +34,8 @@
   background-color: #f0eaff;
   border: none;
   font-size: 18px;
-  padding: 12px 15px;
-  margin: 8px 0;
+  padding: 10px 15px;
+  margin: 5px 0;
 }
 
 .doctor-register-form button {

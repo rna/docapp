@@ -5,6 +5,7 @@ import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import userRegisterRequest from '../../api/userRegisterRequest';
 import './patientRegisterPage.css';
+import logo from '../../assets/logo.png';
 
 const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
   const [user, setUser] = useState({
@@ -39,6 +40,7 @@ const PatientRegisterPage = ({ userRegisterRequest, userInfo }) => {
   } else {
     customRegister = (
       <div className="patient-register-form">
+        <img alt="logo" className="logo" src={logo} />
         <h1> Patient Registration</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">
