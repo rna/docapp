@@ -39,7 +39,11 @@ const SidebarComponent = ({ userType }) => {
 };
 
 SidebarComponent.propTypes = {
-  userType: PropTypes.string.isRequired,
+  userType: PropTypes.string,
+};
+
+SidebarComponent.defaultProps = {
+  userType: null,
 };
 
 export default SidebarComponent;
