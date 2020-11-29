@@ -79,6 +79,7 @@ const DoctorRegisterPage = ({ userRegisterRequest, userInfo }) => {
 
           <button type="submit">Register</button>
         </form>
+        {userInfo.error ? (<div className="error-class"><p>{userInfo.error}</p></div>) : null}
         <span>
           {'Already registered? '}
           <Link to="/login">Click Here</Link>
