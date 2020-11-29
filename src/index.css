@@ -44,6 +44,10 @@ body {
   margin-top: 10px;
 }
 
+.error-class p {
+  color: red;
+}
+
 .loading {
   position: fixed;
   display: inline-block;

@@ -54,6 +54,7 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
         </select>
         <button type="submit">LOGIN</button>
       </form>
+      {userInfo.user.error ? (<div className="error-class"><p>{userInfo.user.error}</p></div>) : null}
       <span>
         Register ?
         {' '}
@@ -68,20 +69,10 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
     customLogin = <div className="loading-container"><div className="loading" /></div>;
   }
 
-  // if (userInfo.error) {
-  //   customLogin = (
-  //     <div>
-  //       Error!
-  //       {userInfo.error.message}
-  //     </div>
-  //   );
-  // }
-
   if (userInfo.isLoggedIn && userInfo.user) {
     if (userInfo.userType === 'patient') { customLogin = <Redirect to="/home" />; }
     if (userInfo.userType === 'doctor') { customLogin = <Redirect to="/dashboard" />; }
   }
-
   return (
     <div>
       <div className="login-left" />

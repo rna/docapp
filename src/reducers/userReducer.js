@@ -9,7 +9,7 @@ const initialState = {
 const userData = (state = initialState, action) => {
   switch (action.type) {
     case 'CREATE_USER_LOGIN_BEGIN': {
-      return { ...state, loading: true };
+      return { ...state, loading: true, isLoggedIn: false };
     }
     case 'CREATE_USER_LOGIN_SUCCESS': {
       return {
@@ -24,6 +24,7 @@ const userData = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        isLoggedIn: false,
         error: action.payload,
       };
     case 'CREATE_USER_LOGOUT': {
