@@ -13,7 +13,6 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  
 }
 
 .doctor-info {
@@ -34,7 +33,7 @@
 .doctor-link a {
   width: auto;
   height: 25px;
-  background: #4E9CAF;
+  background: #4e9caf;
   padding: 10px;
   border-radius: 5px;
   color: white;
@@ -42,6 +41,7 @@
   line-height: 25px;
   text-decoration: none;
 }
+
 .doctor-card span {
   font-weight: bold;
 }
