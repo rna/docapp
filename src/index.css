@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family:
     -apple-system,
-    BlinkMacSystemFont,
     'Segoe UI',
     'Roboto',
     'Oxygen',
@@ -19,6 +18,12 @@ body {
 .logo {
   height: 60px;
   width: auto;
+}
+
+.right-container {
+  width: 78vw;
+  height: 100%;
+  float: right;
 }
 
 .loading-container {

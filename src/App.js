@@ -13,6 +13,7 @@ import PatientBookings from './containers/PatientBookings';
 import DoctorDashboardPage from './containers/DoctorDashboardPage';
 import PrivateRoute from './components/PrivateRoute';
 import HeaderComponent from './components/header/HeaderComponent';
+import SidebarComponent from './components/sidebar/SidebarComponent';
 
 const App = ({ autoLoginRequest, userInfo }) => {
   const usertype = localStorage.getItem('usertype');
@@ -25,20 +26,24 @@ const App = ({ autoLoginRequest, userInfo }) => {
   }
 
   const homeRoute = (usertype === 'patient') ? <Redirect to="/home" /> : <Redirect to="/dashboard" />;
-  const header = userInfo.isLoggedIn ? <HeaderComponent /> : null;
+
   return (
     <div className="App">
-      <div>{header}</div>
-      <Switch>
-        <Route exact path="/" render={() => (userInfo.isLoggedIn ? homeRoute : <Redirect to="/login" />)} />
-        <Route exact path="/login" component={LoginPageContainer} />
-        <Route exact path="/patient-register" component={PatientRegisterPage} />
-        <Route exact path="/doctor-register" component={DoctorRegisterPage} />
-        <PrivateRoute exact path="/bookings" isAuthenticated={userInfo.isLoggedIn} component={PatientBookings} />
-        <PrivateRoute exact path="/home" isAuthenticated={userInfo.isLoggedIn} component={PatientPageContainer} />
-        <PrivateRoute exact path="/dashboard" isAuthenticated={userInfo.isLoggedIn} component={DoctorDashboardPage} />
-        <PrivateRoute exact path="/:doctorId/book-appointment" isAuthenticated={userInfo.isLoggedIn} component={SchedulePageContainer} />
-      </Switch>
+      {userInfo.isLoggedIn ? <HeaderComponent /> : null}
+      {userInfo.isLoggedIn ? <SidebarComponent userType={usertype} /> : null}
+      <SidebarComponent />
+      <div className="right-container">
+        <Switch>
+          <Route exact path="/" render={() => (userInfo.isLoggedIn ? homeRoute : <Redirect to="/login" />)} />
+          <Route exact path="/login" component={LoginPageContainer} />
+          <Route exact path="/patient-register" component={PatientRegisterPage} />
+          <Route exact path="/doctor-register" component={DoctorRegisterPage} />
+          <PrivateRoute exact path="/bookings" isAuthenticated={userInfo.isLoggedIn} component={PatientBookings} />
+          <PrivateRoute exact path="/home" isAuthenticated={userInfo.isLoggedIn} component={PatientPageContainer} />
+          <PrivateRoute exact path="/dashboard" isAuthenticated={userInfo.isLoggedIn} component={DoctorDashboardPage} />
+          <PrivateRoute exact path="/:doctorId/book-appointment" isAuthenticated={userInfo.isLoggedIn} component={SchedulePageContainer} />
+        </Switch>
+      </div>
     </div>
   );
 };
