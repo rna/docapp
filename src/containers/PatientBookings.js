@@ -9,8 +9,8 @@ const PatientBookings = ({
   getPatientBookings, userInfo,
 }) => {
   useEffect(() => {
-    getPatientBookings(userInfo.user.id);
-  }, [getPatientBookings, userInfo.user.id]);
+    getPatientBookings(userInfo.user.patient.id);
+  }, [getPatientBookings, userInfo.user.patient.id]);
 
   let customAppointmentComponent;
   if (appointmentsInfo.loading) {
@@ -33,7 +33,6 @@ const PatientBookings = ({
       </div>
     );
   }
-
   return (
     <div>
       <h1>My appointments</h1>

@@ -9,8 +9,8 @@ const DoctorDashboardPage = ({
   getDoctorBookings, userInfo,
 }) => {
   useEffect(() => {
-    getDoctorBookings(userInfo.user.id);
-  }, [getDoctorBookings, userInfo.user.id]);
+    getDoctorBookings(userInfo.user.doctor.id);
+  }, [getDoctorBookings, userInfo.user.doctor.id]);
 
   let customAppointmentComponent;
   if (loading) {
@@ -29,7 +29,6 @@ const DoctorDashboardPage = ({
       </div>
     );
   }
-
   return (
     <div>
       <h1>Appointments Booked</h1>
