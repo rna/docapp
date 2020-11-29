@@ -68,8 +68,9 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
   if (userInfo.loading) {
     customLogin = <div className="loading-container"><div className="loading" /></div>;
   }
-
-  if (userInfo.isLoggedIn && userInfo.user) {
+  // eslint-disable-next-line
+  console.log(userInfo);
+  if (userInfo.isLoggedIn) {
     if (userInfo.userType === 'patient') { customLogin = <Redirect to="/home" />; }
     if (userInfo.userType === 'doctor') { customLogin = <Redirect to="/dashboard" />; }
   }

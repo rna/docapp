@@ -26,7 +26,7 @@ const App = ({ autoLoginRequest, userInfo }) => {
     }, [autoLoginRequest]);
   }
 
-  const homeRoute = (usertype === 'patient' && usertoken !== 'undefined') ? <Redirect to="/home" /> : <Redirect to="/dashboard" />;
+  const homeRoute = (usertype === 'patient') ? <Redirect to="/home" /> : <Redirect to="/dashboard" />;
 
   return (
     <div className="App">
