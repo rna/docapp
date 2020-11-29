@@ -5,6 +5,7 @@ import {
 } from '../../helpers/dateHelper';
 import timeSlotFilter from '../../helpers/timeSlotFilter';
 import TimeSlotComponent from '../timeslot/TimeslotComponent';
+import './scheduleComponent.css';
 
 const ScheduleComponent = ({ schedule }) => {
   const todaySlots = timeSlotFilter(schedule, today, currentTime);
@@ -28,7 +29,7 @@ const ScheduleComponent = ({ schedule }) => {
   }
 
   return (
-    <div>
+    <div className="schedule">
       <h1>Doctor Schedule</h1>
       <h3>Next three days availability</h3>
       <table>

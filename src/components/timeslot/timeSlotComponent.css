@@ -5,10 +5,21 @@
 }
 
 .slot-booked {
-  border: 2px solid lightgrey;
+  border: none;
   color: grey;
+  border-radius: 5px;
 }
 
 .slot-not-booked {
-  border: 2px solid black;
+  border: none;
+  border-radius: 5px;
+  color: blue;
+  background-color: lightblue;
+}
+
+.slot-not-booked:hover {
+  background-color: lightgreen;
+  border: none;
+  color: white;
+  border-radius: 5px;
 }
