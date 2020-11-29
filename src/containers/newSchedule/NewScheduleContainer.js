@@ -14,7 +14,6 @@ const NewScheduleContainer = ({ user }) => {
     end_time: '',
     duration: '',
   });
-
   const handleChange = e => {
     const { name, value } = e.target;
     setSchedule({ ...schedule, [name]: value });
@@ -24,7 +23,7 @@ const NewScheduleContainer = ({ user }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const scheduleObj = { [type]: schedule };
-    postSchedule(user.id, scheduleObj);
+    postSchedule(user.doctor.id, scheduleObj);
     setSchedule({
       start_date: '',
       start_time: '',
