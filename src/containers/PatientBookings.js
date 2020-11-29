@@ -17,8 +17,12 @@ const PatientBookings = ({
     customAppointmentComponent = <div className="loading-container"><div className="loading" /></div>;
   }
   if (appointmentsInfo.appointments) {
-    customAppointmentComponent = appointmentsInfo.appointments.map(
-      booking => <BookingCardComponent key={booking.id} booking={booking} />,
+    customAppointmentComponent = (
+      <div className="booking-container">
+        {appointmentsInfo.appointments.map(
+          booking => <BookingCardComponent key={booking.id} booking={booking} />,
+        )}
+      </div>
     );
   }
   if (appointmentsInfo.error) {
@@ -32,7 +36,7 @@ const PatientBookings = ({
 
   return (
     <div>
-      <h1>Patient Bookings</h1>
+      <h1>My appointments</h1>
       {customAppointmentComponent}
     </div>
   );
