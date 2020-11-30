@@ -29,7 +29,7 @@ const ScheduleComponent = ({ schedule }) => {
   }
 
   return (
-    <div className="schedule">
+    <section className="schedule">
       <h1>Doctor Schedule</h1>
       <h3>Next three days availability</h3>
       <table>
@@ -48,7 +48,7 @@ const ScheduleComponent = ({ schedule }) => {
           </tr>
         </tbody>
       </table>
-    </div>
+    </section>
   );
 };
 

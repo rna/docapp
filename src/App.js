@@ -29,7 +29,7 @@ const App = ({ autoLoginRequest, userInfo }) => {
   const homeRoute = (usertype === 'patient') ? <Redirect to="/home" /> : <Redirect to="/dashboard" />;
 
   return (
-    <div className="App">
+    <main className="App">
       {userInfo.isLoggedIn ? <HeaderComponent /> : null}
       {userInfo.isLoggedIn ? <SidebarComponent userType={usertype} /> : null}
       <SidebarComponent />
@@ -46,7 +46,7 @@ const App = ({ autoLoginRequest, userInfo }) => {
           <PrivateRoute exact path="/:doctorId/book-appointment" isAuthenticated={userInfo.isLoggedIn} component={SchedulePageContainer} />
         </Switch>
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -5,7 +5,7 @@ import './doctorCard.styles.css';
 import defaultImg from '../../assets/default-image.png';
 
 const DoctorCardComponent = ({ doctor }) => (
-  <div className="doctor-card">
+  <section className="doctor-card">
     <div className="doctor-image">
       <img src={doctor.image ? doctor.image : defaultImg} alt={doctor.name} />
     </div>
@@ -30,7 +30,7 @@ const DoctorCardComponent = ({ doctor }) => (
     <div className="doctor-link">
       <Link to={`/${doctor.id}/book-appointment`}>Book an Appointment</Link>
     </div>
-  </div>
+  </section>
 );
 
 DoctorCardComponent.propTypes = {

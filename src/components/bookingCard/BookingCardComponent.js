@@ -7,7 +7,7 @@ const BookingCardComponent = ({ booking }) => {
   const btime = booking.time.split(' ')[1];
 
   return (
-    <div className="booking-card">
+    <section className="booking-card">
       <p>Booking Status: Confirmed</p>
       <p>
         Date:
@@ -17,7 +17,7 @@ const BookingCardComponent = ({ booking }) => {
         Time:
         {btime}
       </p>
-    </div>
+    </section>
   );
 };
 

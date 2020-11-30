@@ -31,9 +31,9 @@ const SchedulePageContainer = ({
   }
 
   return (
-    <div>
+    <section>
       {customScheduleComponent}
-    </div>
+    </section>
   );
 };
 

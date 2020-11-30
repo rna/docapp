@@ -89,12 +89,12 @@ const DoctorRegisterPage = ({ userRegisterRequest, userInfo }) => {
   }
 
   return (
-    <div>
+    <section>
       <div className="doctor-register-left" />
       <div className="doctor-register-right">
         { customRegister }
       </div>
-    </div>
+    </section>
   );
 };
 

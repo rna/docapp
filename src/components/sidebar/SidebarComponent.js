@@ -32,9 +32,9 @@ const SidebarComponent = ({ userType }) => {
     );
   }
   return (
-    <div className="left-container">
+    <aside className="left-container">
       {customSidebar}
-    </div>
+    </aside>
   );
 };
 

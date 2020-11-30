@@ -73,12 +73,12 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
     if (userInfo.userType === 'doctor') { customLogin = <Redirect to="/dashboard" />; }
   }
   return (
-    <div>
+    <section>
       <div className="login-left" />
       <div className="login-right">
         { customLogin }
       </div>
-    </div>
+    </section>
   );
 };
 
