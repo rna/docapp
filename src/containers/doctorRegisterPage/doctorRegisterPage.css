@@ -1,0 +1,58 @@
+.doctor-register-left {
+  background: url(../../assets/hospitals.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+
+.doctor-register-right {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+
+.doctor-register-form {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.doctor-register-form h1 {
+  font-weight: bold;
+  color: #b09cf1;
+  line-height: 0.7em;
+}
+
+.doctor-register-form input {
+  width: 50%;
+  background-color: #f0eaff;
+  border: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin: 5px 0;
+}
+
+.doctor-register-form button {
+  display: block;
+  border-radius: 20px;
+  border: 1px solid #6e6afc;
+  background-color: #6e6afc;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  padding: 12px 45px;
+  margin: 20px auto;
+}
+
+.doctor-register-form a {
+  color: #6e6afc;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 15px 0;
+}

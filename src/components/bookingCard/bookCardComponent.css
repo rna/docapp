@@ -1,0 +1,12 @@
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.booking-card {
+  max-width: 20vw;
+  border: 2px solid grey;
+  margin: 20px;
+  padding: 20px;
+  background-color: aliceblue;
+}

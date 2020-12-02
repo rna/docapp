@@ -1,0 +1,47 @@
+.doctor-card {
+  display: flex;
+  align-items: center;
+  margin: 1vw;
+  border: 2px solid gray;
+}
+
+.doctor-image {
+  margin: 1vw 2vw;
+}
+
+.doctor-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.doctor-info {
+  margin: 0 40px 0 10px;
+}
+
+.doctor-info h3 {
+  color: blue;
+  line-height: 0.7em;
+  margin: 0;
+}
+
+.spec {
+  font-size: 16px;
+  color: grey;
+}
+
+.doctor-link a {
+  width: auto;
+  height: 25px;
+  background: #4e9caf;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+  text-decoration: none;
+}
+
+.doctor-card span {
+  font-weight: bold;
+}

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #f0eaff;
+  align-items: center;
+}
+
+.header img {
+  float: left;
+  height: 60px;
+  width: auto;
+}
+
+.header button {
+  border-radius: 5px;
+  border: 1px solid #f0718d;
+  background-color: #f0718d;
+  color: white;
+  font-size: 12px;
+  font-weight: bolder;
+  padding: 8px;
+  margin-right: 20px;
+}

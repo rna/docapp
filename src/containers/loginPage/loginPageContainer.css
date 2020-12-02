@@ -1,0 +1,67 @@
+.login-left {
+  background: url(../../assets/doctor.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+
+.login-right {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+
+.login-form {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.login-form h1 {
+  font-weight: bold;
+  color: #b09cf1;
+}
+
+.login-form input {
+  width: 50%;
+  background-color: #f0eaff;
+  border: none;
+  font-size: 18px;
+  padding: 12px 15px;
+  margin: 8px 0;
+}
+
+.login-form select {
+  display: block;
+  margin: 14px auto;
+  width: 25%;
+  font-size: 18px;
+  background-color: #f0eaff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 10px;
+}
+
+.login-form button {
+  border-radius: 20px;
+  border: 1px solid #f0718d;
+  background-color: #f0718d;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  padding: 12px 45px;
+  margin-bottom: 20px;
+}
+
+.login-form a {
+  color: #6e6afc;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 15px 0;
+}

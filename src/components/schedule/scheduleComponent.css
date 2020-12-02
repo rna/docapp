@@ -1,0 +1,21 @@
+.schedule {
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+.schedule td,
+.schedule th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.schedule th {
+  padding: 12px;
+  text-align: left;
+  background-color: #af99b5;
+  color: white;
+}
+
+.schedule tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
