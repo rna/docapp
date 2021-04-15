@@ -59,7 +59,7 @@ const LoginPageContainer = ({ userLoginRequest, userInfo }) => {
         Register ?
         {' '}
         <Link to="/patient-register">Patient</Link>
-        {' Or '}
+        {' or '}
         <Link to="/doctor-register">Doctor</Link>
       </span>
     </div>
